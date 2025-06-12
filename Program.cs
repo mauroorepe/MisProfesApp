@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using MisProfesApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Add dbContext
+builder.Services.AddDbContext<MisProfesContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MisProfessApp")));
 
 // Add services to the container.
 
