@@ -45,6 +45,7 @@ namespace MisProfesApp.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
+                    new Claim(ClaimTypes.NameIdentifier, req.Id.ToString()),
                     new Claim(ClaimTypes.Role, req.Role.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(90),
